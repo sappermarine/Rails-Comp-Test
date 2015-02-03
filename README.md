@@ -6,7 +6,7 @@
 
 ### Prerequisites
 
-- Please note that this will require some basic [Ruby on Rails](http://rubyonrails.org/) and [RSpec](http://rspec.info/) knowledge. 
+- Please note that this will require some basic [Ruby on Rails](http://rubyonrails.org/) and Testing knowledge. 
 
 - You will need to have [Ruby on Rails](http://www.rubyonrails.org/) installed to complete this task. 
 
