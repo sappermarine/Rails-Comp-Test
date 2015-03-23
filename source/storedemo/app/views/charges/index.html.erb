@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Charges</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody class="color-failed">
+    <% @charges_failed.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Disputed Charges</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+
+  <tbody class="color-disputed">
+    <% @charges_disputed.each do |charge| %>
+      <tr>
+        <td><%= charge.customer.first_name + " " + charge.customer.last_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.created %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Successful Charges</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Refunded</th>
+      <th>Customer</th>
+      <th>Disputed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+      <tr>
+        <td><%= charge.id %></td>
+        <td><%= charge.created %></td>
+        <td><%= charge.paid %></td>
+        <td><%= charge.amount %></td>
+        <td><%= charge.currency %></td>
+        <td><%= charge.refunded %></td>
+        <td><%= charge.customer_id %></td>
+        <td><%= charge.disputed %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>
